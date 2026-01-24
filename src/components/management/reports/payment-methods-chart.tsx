@@ -37,7 +37,7 @@ export function PaymentMethodsChart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-75"
+          className="mx-auto aspect-square max-h-62"
         >
           <PieChart>
             <Pie
