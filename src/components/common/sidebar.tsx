@@ -9,20 +9,15 @@ import {
   Settings,
   LogOut,
   ChevronDown,
-  // HandCoins,
   Package,
   Users,
   History,
   BarChart3,
-  // Grid2X2,
-  // BadgeDollarSign,
+  ShieldAlert,
   User,
   Info,
-  // Lightbulb,
-  // Accessibility,
   ReceiptText,
   GlobeLock,
-  // HelpCircle,
   ListOrdered,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -62,21 +57,16 @@ const Sidebar = ({
     { name: "Users", icon: Users, href: "/user-management" },
     { name: "Listing", icon: Package, href: "/listing-management" },
     { name: "Transactions", icon: History, href: "/transactions" },
-    { name: "Reports", icon: BarChart3, href: "/transaction-reports" },
-    // { name: "Auction Management", icon: HandCoins, href: "/auction-management" },
-    // { name: "Category & Banner", icon: Grid2X2, href: "/category-banner" },
-    // { name: "Financial Orders", icon: BadgeDollarSign, href: "/financial-orders" },
+    { name: "Report Management", icon: ShieldAlert, href: "/report-management" },
+    { name: "Analytics", icon: BarChart3, href: "/transaction-reports" },
   ];
 
   const settingsSubItems = useMemo(
     () => [
       { name: "Profile", icon: User, href: "/settings/profile" },
       { name: "About Us", icon: Info, href: "/settings/about" },
-      // { name: "Tips & tricks", icon: Lightbulb, href: "/settings/tips" },
-      // { name: "Accessibility", icon: Accessibility, href: "/settings/accessibility" },
       { name: "Terms and Conditions", icon: ReceiptText, href: "/settings/terms" },
       { name: "Privacy Policy", icon: GlobeLock, href: "/settings/privacy" },
-      // { name: "FAQs", icon: HelpCircle, href: "/settings/faqs" },
     ],
     [],
   );

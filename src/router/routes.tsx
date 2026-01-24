@@ -11,15 +11,11 @@ const Privacy = lazy(() => import("@/app/settings/privacy/Privacy"));
 const Terms = lazy(() => import("@/app/settings/terms/Terms"));
 const About = lazy(() => import("@/app/settings/about-us/About"));
 const Users = lazy(() => import("@/app/management/users/Users"));
-const AuctionManagement = lazy(() => import("@/app/management/auction/Auction"));
 const ListingManagement = lazy(() => import("@/app/management/listings/Listings"));
+const ReportManagement = lazy(() => import("@/app/management/moderation/ReportManagement"));
 const TransactionReports = lazy(() => import("@/app/management/reports/TransactionReports"));
 const Transactions = lazy(() => import("@/app/management/transactions/Transactions"));
-const CategoryBanner = lazy(() => import("@/app/management/category-banner/CategoryBanner"));
 const FinancialOrders = lazy(() => import("@/app/management/financial-orders/FinancialOrders"));
-const Tips = lazy(() => import("@/app/settings/tips/Tips"));
-const Accessibility = lazy(() => import("@/app/settings/accessibility/Accessibility"));
-const FAQs = lazy(() => import("@/app/settings/faqs/FAQs"));
 const Notifications = lazy(() => import("@/app/notifications/Notifications"));
 const Login = lazy(() => import("@/app/auth/Login"));
 const ForgotPassword = lazy(() => import("@/app/auth/ForgotPassword"));
@@ -36,23 +32,19 @@ export const router = createBrowserRouter([
             { index: true, element: <Dashboard /> },
 
             // Management
-            { path: "auction-management", element: <AuctionManagement /> },
             { path: "listing-management", element: <ListingManagement /> },
+            { path: "report-management", element: <ReportManagement /> },
             { path: "user-management", element: <Users /> },
             { path: "transactions", element: <Transactions /> },
             { path: "transaction-reports", element: <TransactionReports /> },
-            { path: "category-banner", element: <CategoryBanner /> },
             { path: "financial-orders", element: <FinancialOrders /> },
             { path: "notifications", element: <Notifications /> },
 
             // Settings
             { path: "settings/profile", element: <Profile /> },
             { path: "settings/about", element: <About /> },
-            { path: "settings/tips", element: <Tips /> },
-            { path: "settings/accessibility", element: <Accessibility /> },
             { path: "settings/terms", element: <Terms /> },
             { path: "settings/privacy", element: <Privacy /> },
-            { path: "settings/faqs", element: <FAQs /> },
         ]
     },
     {

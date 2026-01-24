@@ -1,6 +1,7 @@
 "use client";
 
 import PageLayout from "@/components/common/page-layout";
+import PageHeader from "@/components/ui/custom/page-header";
 import { TradesChart } from "@/components/management/reports/trades-chart";
 import { PaymentMethodsChart } from "@/components/management/reports/payment-methods-chart";
 import { UserActivityChart } from "@/components/management/reports/user-activity-chart";
@@ -10,7 +11,11 @@ import { ArrowUpRight, ArrowDownRight, DollarSign, Activity, Users, CreditCard }
 const TransactionReports = () => {
   return (
     <PageLayout>
-      <div>
+      <PageHeader
+        title="Analytics"
+        description="Monitor platform performance, sales, and user activity."
+      />
+      <div className="grid gap-6">
         {/* Summary Cards */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card> 
