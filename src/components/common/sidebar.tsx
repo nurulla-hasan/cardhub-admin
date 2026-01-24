@@ -203,9 +203,9 @@ const Sidebar = ({
           </Collapsible>
         </nav>
       </ScrollArea>
-      <div className="border-t border-white/10 p-4">
+      <div className="border-t p-4">
         <Link to="/auth/login" className="block w-full text-center">
-          <Button variant="ghost" className="justify-start w-full">
+          <Button variant="outline" className="justify-start w-full">
             <LogOut />
             Logout
           </Button>
