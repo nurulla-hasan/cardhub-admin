@@ -9,18 +9,18 @@ import {
   Settings,
   LogOut,
   ChevronDown,
-  HandCoins,
+  // HandCoins,
   Package,
   Users,
   History,
-  Grid2X2,
-  BadgeDollarSign,
+  // Grid2X2,
+  // BadgeDollarSign,
   Info,
-  Lightbulb,
-  Accessibility,
+  // Lightbulb,
+  // Accessibility,
   ReceiptText,
   GlobeLock,
-  HelpCircle,
+  // HelpCircle,
   ListOrdered,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -57,29 +57,29 @@ const Sidebar = ({
   );
 
   const managementItems = [
-    { name: "Auction Management", icon: HandCoins, href: "/auction-management" },
-    { name: "Order Management", icon: Package, href: "/order-management" },
-    { name: "User Management", icon: Users, href: "/user-management" },
+    { name: "Users", icon: Users, href: "/user-management" },
+    { name: "Listing", icon: Package, href: "/listing-management" },
     { name: "Transactions", icon: History, href: "/transactions" },
-    { name: "Category & Banner", icon: Grid2X2, href: "/category-banner" },
-    { name: "Financial Orders", icon: BadgeDollarSign, href: "/financial-orders" },
+    // { name: "Auction Management", icon: HandCoins, href: "/auction-management" },
+    // { name: "Category & Banner", icon: Grid2X2, href: "/category-banner" },
+    // { name: "Financial Orders", icon: BadgeDollarSign, href: "/financial-orders" },
   ];
 
   const settingsSubItems = useMemo(
     () => [
       { name: "About Us", icon: Info, href: "/settings/about" },
-      { name: "Tips & tricks", icon: Lightbulb, href: "/settings/tips" },
-      { name: "Accessibility", icon: Accessibility, href: "/settings/accessibility" },
+      // { name: "Tips & tricks", icon: Lightbulb, href: "/settings/tips" },
+      // { name: "Accessibility", icon: Accessibility, href: "/settings/accessibility" },
       { name: "Terms and Conditions", icon: ReceiptText, href: "/settings/terms" },
       { name: "Privacy Policy", icon: GlobeLock, href: "/settings/privacy" },
-      { name: "FAQs", icon: HelpCircle, href: "/settings/faqs" },
+      // { name: "FAQs", icon: HelpCircle, href: "/settings/faqs" },
     ],
     [],
   );
 
   return (
     <div
-      className={`fixed top-0 left-0 z-40 h-screen text-sidebar-primary-foreground w-64 transition-transform duration-300 ease-in-out transform ${
+      className={`fixed top-0 left-0 z-40 h-screen text-foreground w-64 transition-transform duration-300 ease-in-out transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       } lg:translate-x-0 flex flex-col`}
     >

@@ -1,156 +1,140 @@
-
 import PageLayout from "@/components/common/page-layout";
 import PageHeader from "@/components/ui/custom/page-header";
 import { DataTable } from "@/components/ui/custom/data-table";
+import { TransactionFilter } from "@/components/management/transactions/transaction-filter";
 import {
   transactionColumns,
   type Transaction,
 } from "@/components/management/transactions/transaction-columns";
-import { TransactionFilter } from "@/components/management/transactions/transaction-filter";
 
-const mockTransactions: Transaction[] = [
+const transactions: Transaction[] = [
   {
-    id: "1",
-    slNo: "#12333",
-    date: "12/06/24",
+    id: "TRX-9876",
     user: {
-      name: "Kathryn Murphy",
-      avatar:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Zahirul Islam",
+      email: "zahir@cardhub.gg",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Zahir",
     },
-    item: "iPhone 13 Pro Max",
-    paymentStatus: "Paid",
-    paidAmount: 24.0,
-    paymentType: "Full Payment",
+    type: "Escrow",
+    amount: "$4,200.00",
+    status: "Pending",
+    date: "Oct 20, 2024",
   },
   {
-    id: "2",
-    slNo: "#12333",
-    date: "10/06/24",
-    user: {
-      name: "Devon Lane",
-      avatar:
-        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    item: "Samsung L2 Smart TV",
-    paymentStatus: "Paid",
-    paidAmount: 20.0,
-    paymentType: "Installment",
-  },
-  {
-    id: "3",
-    slNo: "#12333",
-    date: "10/06/24",
-    user: {
-      name: "Foysal Rahman",
-      avatar:
-        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    item: "Men's T-shirt",
-    paymentStatus: "Paid",
-    paidAmount: 45.0,
-    paymentType: "Full Payment",
-  },
-  {
-    id: "4",
-    slNo: "#12333",
-    date: "05/06/24",
-    user: {
-      name: "Hari Danang",
-      avatar:
-        "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    item: "Logitech A4 Mouse",
-    paymentStatus: "Paid",
-    paidAmount: 35.0,
-    paymentType: "Installment",
-  },
-  {
-    id: "5",
-    slNo: "#12333",
-    date: "04/06/24",
-    user: {
-      name: "Floyd Miles",
-      avatar:
-        "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    item: "100 Credits",
-    paymentStatus: "Paid",
-    paidAmount: 15.0,
-    paymentType: "Installment",
-  },
-  {
-    id: "6",
-    slNo: "#12333",
-    date: "04/06/24",
+    id: "TRX-9877",
     user: {
       name: "Eleanor Pena",
-      avatar:
-        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+      email: "eleanor@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Eleanor",
     },
-    item: "Men's T-shirt",
-    paymentStatus: "Paid",
-    paidAmount: 18.0,
-    paymentType: "Full Payment",
+    type: "Release",
+    amount: "$850.00",
+    status: "Completed",
+    date: "Oct 19, 2024",
   },
   {
-    id: "7",
-    slNo: "#12333",
-    date: "04/06/24",
+    id: "TRX-9878",
     user: {
-      name: "Devon Lane",
-      avatar:
-        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Savannah Nguyen",
+      email: "savannah@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Savannah",
     },
-    item: "500 Credits",
-    paymentStatus: "Paid",
-    paidAmount: 24.0,
-    paymentType: "Installment",
+    type: "Payment",
+    amount: "$1,120.00",
+    status: "Completed",
+    date: "Oct 19, 2024",
   },
   {
-    id: "8",
-    slNo: "#12333",
-    date: "04/06/24",
+    id: "TRX-9879",
     user: {
-      name: "Devon Lane",
-      avatar:
-        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Tanvir Ahmed",
+      email: "tanvir@dev.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Tanvir",
     },
-    item: "Rolax M2 Watch",
-    paymentStatus: "Paid",
-    paidAmount: 28.0,
-    paymentType: "Full Payment",
+    type: "Refund",
+    amount: "$320.00",
+    status: "Failed",
+    date: "Oct 18, 2024",
   },
   {
-    id: "9",
-    slNo: "#12333",
-    date: "04/06/24",
+    id: "TRX-9880",
     user: {
-      name: "Devon Lane",
-      avatar:
-        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Bessie Cooper",
+      email: "bessie@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bessie",
     },
-    item: "Rolax M2 Watch",
-    paymentStatus: "Paid",
-    paidAmount: 28.0,
-    paymentType: "Installment",
+    type: "Escrow",
+    amount: "$6,700.00",
+    status: "Pending",
+    date: "Oct 17, 2024",
   },
   {
-    id: "10",
-    slNo: "#12333",
-    date: "04/06/24",
+    id: "TRX-9881",
     user: {
-      name: "Hari Danang",
-      avatar:
-        "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Robert Fox",
+      email: "robert@fox.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Robert",
     },
-    item: "Rolax M2 Watch",
-    paymentStatus: "Paid",
-    paidAmount: 28.0,
-    paymentType: "Full Payment",
+    type: "Payment",
+    amount: "$45.00",
+    status: "Completed",
+    date: "Oct 17, 2024",
+  },
+  {
+    id: "TRX-9882",
+    user: {
+      name: "Darlene Robertson",
+      email: "darlene@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Darlene",
+    },
+    type: "Release",
+    amount: "$2,900.00",
+    status: "Completed",
+    date: "Oct 16, 2024",
+  },
+  {
+    id: "TRX-9883",
+    user: {
+      name: "Jacob Jones",
+      email: "jacob@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jacob",
+    },
+    type: "Escrow",
+    amount: "$150.00",
+    status: "Pending",
+    date: "Oct 15, 2024",
+  },
+  {
+    id: "TRX-9884",
+    user: {
+      name: "Kristin Watson",
+      email: "kristin@test.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kristin",
+    },
+    type: "Refund",
+    amount: "$99.00",
+    status: "Completed",
+    date: "Oct 15, 2024",
+  },
+  {
+    id: "TRX-9885",
+    user: {
+      name: "Cody Fisher",
+      email: "cody@example.com",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cody",
+    },
+    type: "Payment",
+    amount: "$500.00",
+    status: "Failed",
+    date: "Oct 14, 2024",
   },
 ];
-
+const meta = {
+  total: transactions.length,
+  page: 1,
+  limit: 10,
+  totalPages: 4,
+};
 const Transactions = () => {
   return (
     <PageLayout>
@@ -159,11 +143,12 @@ const Transactions = () => {
           <PageHeader
             title="Transactions"
             description="View and manage all financial transactions and history."
-            showBack={true}
+            // showBack={true}
+            length={meta.total}
           />
           <TransactionFilter />
         </div>
-        <DataTable columns={transactionColumns} data={mockTransactions} />
+        <DataTable columns={transactionColumns} data={transactions} meta={meta} />
       </div>
     </PageLayout>
   );

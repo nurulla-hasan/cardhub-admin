@@ -1,18 +1,26 @@
-"use client";
+;
 
-import { Search } from "lucide-react";
+import { Download, Search } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export function TransactionFilter() {
+export const TransactionFilter = () => {
   return (
-    <div className="flex items-center justify-end">
-      <div className="relative w-full md:w-64">
+    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-end">
+      {/* Center search + filter icon */}
+      <div className="relative w-full md:w-65">
         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
-          placeholder="Search here..."
-          className="pl-9 rounded-full"
+          placeholder="Search by name or email"
+          className="pl-9 pr-3 rounded-full border-muted-foreground/30 bg-background"
         />
       </div>
+
+      <Button variant="outline" className="rounded-full">
+        <Download />
+        Export
+      </Button>
     </div>
   );
-}
+};

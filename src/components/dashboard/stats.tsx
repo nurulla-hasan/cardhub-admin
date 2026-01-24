@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, UserCheck, UserPlus } from "lucide-react";
+import { Users, ShieldCheck, Activity } from "lucide-react";
 
 type Stat = {
   label: string;
@@ -11,23 +11,23 @@ type Stat = {
 
 const items: Stat[] = [
   { 
-    label: "Total Users", 
+    label: "Total Collectors", 
     value: "852,650", 
     icon: <Users className="h-6 w-6" />,
     color: "text-blue-600",
     bgColor: "bg-blue-100"
   },
   { 
-    label: "Active Users", 
+    label: "Active Traders", 
     value: "450,200", 
-    icon: <UserCheck className="h-6 w-6" />,
+    icon: <Activity className="h-6 w-6" />,
     color: "text-green-600",
     bgColor: "bg-green-100"
   },
   { 
-    label: "New Users", 
+    label: "Verified Sellers", 
     value: "12,450", 
-    icon: <UserPlus className="h-6 w-6" />,
+    icon: <ShieldCheck className="h-6 w-6" />,
     color: "text-purple-600",
     bgColor: "bg-purple-100"
   },

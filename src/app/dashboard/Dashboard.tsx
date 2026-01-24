@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   transactionColumns,
   type Transaction,
-} from "@/components/dashboard/transaction-columns";
+} from "@/components/management/transactions/transaction-columns";
 import { DataTable } from "@/components/ui/custom/data-table";
 
 const Dashboard = () => {
@@ -16,7 +16,6 @@ const Dashboard = () => {
       <div className="space-y-8">
         {/* User Overview Section */}
         <section className="space-y-4">
-          <h2 className="text-lg font-semibold tracking-tight">User Overview</h2>
           <Stats />
         </section>
 
