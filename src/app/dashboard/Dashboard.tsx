@@ -8,6 +8,7 @@ import {
   type Transaction,
 } from "@/components/management/transactions/transaction-columns";
 import { DataTable } from "@/components/ui/custom/data-table";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
 
@@ -38,7 +39,7 @@ const Dashboard = () => {
                 <CardTitle className="text-base font-medium">
                   Recent Transactions
                 </CardTitle>
-                <span className="text-xs text-primary cursor-pointer">View all</span>
+                <Link className="text-xs text-primary cursor-pointer" to="/transactions">View all</Link>
               </div>
             </CardHeader>
             <CardContent>

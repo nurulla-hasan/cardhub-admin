@@ -14,8 +14,8 @@ const ProfileHeader = () => {
   };
 
   return (
-    <Card className="mb-6 overflow-hidden border-none shadow-sm bg-linear-to-r from-primary/10 via-background to-background">
-      <CardContent className="p-6">
+    <Card>
+      <CardContent>
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="relative">
             <Avatar className="h-24 w-24 border-4 border-background shadow-xl">
