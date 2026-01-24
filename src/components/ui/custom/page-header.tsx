@@ -19,7 +19,7 @@ const PageHeader = ({title, description, length, showBack}: {title: string, desc
                     </Button>
                 )}
                 <h1 className="text-2xl font-bold">{title}</h1>
-                {length && <Badge className="rounded-full">{length}</Badge>}
+                {length && <Badge className="rounded-full gradient-button">{length}</Badge>}
             </div>
             <p className="text-muted-foreground">
                 {description}

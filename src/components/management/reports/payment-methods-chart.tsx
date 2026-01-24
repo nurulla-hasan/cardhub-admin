@@ -16,10 +16,10 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { name: "Credit Card", value: 45, color: "hsl(var(--chart-1))" },
-  { name: "PayPal", value: 30, color: "hsl(var(--chart-2))" },
-  { name: "Crypto", value: 15, color: "hsl(var(--chart-3))" },
-  { name: "Bank Transfer", value: 10, color: "hsl(var(--chart-4))" },
+  { name: "Credit Card", value: 45, color: "#8b5cf6" },
+  { name: "PayPal", value: 30, color: "#ec4899" },
+  { name: "Crypto", value: 15, color: "#06b6d4" },
+  { name: "Bank Transfer", value: 10, color: "#f59e0b" },
 ];
 
 const chartConfig = {

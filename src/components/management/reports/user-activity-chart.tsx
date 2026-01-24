@@ -28,11 +28,11 @@ const chartData = [
 const chartConfig = {
   active: {
     label: "Active Users",
-    color: "hsl(var(--chart-1))",
+    color: "#a855f7",
   },
   new: {
     label: "New Registrations",
-    color: "hsl(var(--chart-2))",
+    color: "#71717a",
   },
 } satisfies ChartConfig;
 
@@ -45,6 +45,12 @@ export function UserActivityChart() {
       <CardContent>
         <ChartContainer config={chartConfig} className="aspect-auto h-75 w-full">
           <BarChart accessibilityLayer data={chartData}>
+            <defs>
+              <linearGradient id="activeBarGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#a855f7" stopOpacity={1} />
+                <stop offset="100%" stopColor="#a855f7" stopOpacity={0.3} />
+              </linearGradient>
+            </defs>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="day"
@@ -62,8 +68,8 @@ export function UserActivityChart() {
               cursor={false}
               content={<ChartTooltipContent indicator="dashed" />}
             />
-            <Bar dataKey="active" fill="var(--color-active)" radius={4} />
-            <Bar dataKey="new" fill="var(--color-new)" radius={4} />
+            <Bar dataKey="active" fill="url(#activeBarGradient)" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="new" fill="#71717a" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ChartContainer>
       </CardContent>

@@ -16,6 +16,7 @@ import {
   BarChart3,
   // Grid2X2,
   // BadgeDollarSign,
+  User,
   Info,
   // Lightbulb,
   // Accessibility,
@@ -69,6 +70,7 @@ const Sidebar = ({
 
   const settingsSubItems = useMemo(
     () => [
+      { name: "Profile", icon: User, href: "/settings/profile" },
       { name: "About Us", icon: Info, href: "/settings/about" },
       // { name: "Tips & tricks", icon: Lightbulb, href: "/settings/tips" },
       // { name: "Accessibility", icon: Accessibility, href: "/settings/accessibility" },
