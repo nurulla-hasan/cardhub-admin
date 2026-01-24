@@ -15,19 +15,19 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { month: "Jan", earning: 80 },
-  { month: "Feb", earning: 60 },
-  { month: "Mar", earning: 70 },
-  { month: "Apr", earning: 55 },
-  { month: "May", earning: 75 },
-  { month: "Jun", earning: 65 },
-  { month: "Jul", earning: 85 },
-  { month: "Aug", earning: 78 },
+  { month: "Jan", transactions: 120 },
+  { month: "Feb", transactions: 150 },
+  { month: "Mar", transactions: 180 },
+  { month: "Apr", transactions: 140 },
+  { month: "May", transactions: 200 },
+  { month: "Jun", transactions: 250 },
+  { month: "Jul", transactions: 300 },
+  { month: "Aug", transactions: 280 },
 ];
 
 const chartConfig = {
-  earning: {
-    label: "Earning",
+  transactions: {
+    label: "Transactions",
     color: "var(--primary)",
   },
 } satisfies ChartConfig;
@@ -37,17 +37,17 @@ const EarningGrowthChart = () => {
     <Card>
       <CardHeader>
         <CardTitle className="text-base font-medium">
-          Earning Growth
+          Transaction Overview
         </CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-69 w-full"
+          className="aspect-auto h-66 w-full"
         >
           <AreaChart data={chartData}>
             <defs>
-              <linearGradient id="earningFill" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="transactionFill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.6} />
                 <stop offset="95%" stopColor="var(--primary)" stopOpacity={0} />
               </linearGradient>
@@ -71,9 +71,9 @@ const EarningGrowthChart = () => {
             />
             <Area
               type="natural"
-              dataKey="earning"
+              dataKey="transactions"
               stroke="var(--primary)"
-              fill="url(#earningFill)"
+              fill="url(#transactionFill)"
             />
           </AreaChart>
         </ChartContainer>

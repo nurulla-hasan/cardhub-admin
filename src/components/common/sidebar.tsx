@@ -85,7 +85,7 @@ const Sidebar = ({
     >
       <div className="p-6">
         <span className="text-3xl font-bold font-rakkas text-primary">
-          Bidding Web
+          Cardhub Admin
         </span>
       </div>
       <ScrollArea className="h-[calc(100vh-149px)]">

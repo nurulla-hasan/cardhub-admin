@@ -44,65 +44,65 @@
 
 :root {
   --radius: 0.75rem;
-  --background: #fff7e8; 
-  --foreground: #2d2417;
+  --background: #fbf7ff; 
+  --foreground: #1e1b24;
   
   --card: #ffffff;
-  --card-foreground: #2d2417;
+  --card-foreground: #1e1b24;
   
   --popover: #ffffff;
-  --popover-foreground: #2d2417;
+  --popover-foreground: #1e1b24;
   
-  --primary: #f2a011; 
+  --primary: #ab3ddc; 
   --primary-foreground: #ffffff;
   
-  --secondary: #fdf2d7;
-  --secondary-foreground: #8c5d00;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #7e22ce;
   
-  --muted: #f4ece1;
-  --muted-foreground: #736b5e;
+  --muted: #f4f0fa;
+  --muted-foreground: #6b7280;
   
-  --accent: #f2a011;
+  --accent: #ab3ddc;
   --accent-foreground: #ffffff;
   
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #e9dec9;
-  --input: #e9dec9;
-  --ring: #f2a011;
+  --border: #e9e2f5;
+  --input: #e9e2f5;
+  --ring: #ab3ddc;
   
-  --sidebar: #25231f;
-  --sidebar-foreground: #f4ece1;
-  --sidebar-primary: #f2a011;
+  --sidebar: #1e1b24;
+  --sidebar-foreground: #f4f0fa;
+  --sidebar-primary: #ab3ddc;
   --sidebar-primary-foreground: #ffffff;
 }
 
 .dark {
-  --background: #12100c;
-  --foreground: #f4ece1;
+  --background: #0c0a0f;
+  --foreground: #f4f0fa;
   
-  --card: #1c1914;
-  --card-foreground: #f4ece1;
+  --card: #16141a;
+  --card-foreground: #f4f0fa;
   
-  --popover: #1c1914;
-  --popover-foreground: #f4ece1;
+  --popover: #16141a;
+  --popover-foreground: #f4f0fa;
   
-  --primary: #f2a011;
-  --primary-foreground: #12100c;
+  --primary: #ab3ddc;
+  --primary-foreground: #0c0a0f;
   
-  --secondary: #2d2417;
-  --secondary-foreground: #f2a011;
+  --secondary: #241b30;
+  --secondary-foreground: #ab3ddc;
   
-  --muted: #26211a;
-  --muted-foreground: #a69a8a;
+  --muted: #1e1b24;
+  --muted-foreground: #9ca3af;
   
-  --accent: #f2a011;
-  --accent-foreground: #12100c;
+  --accent: #ab3ddc;
+  --accent-foreground: #0c0a0f;
   
-  --border: #332b1f;
-  --input: #332b1f;
-  --ring: #f2a011;
+  --border: #2d243a;
+  --input: #2d243a;
+  --ring: #ab3ddc;
   
-  --sidebar: #25231f;
+  --sidebar: #16141a;
 }
 
 @layer base {
