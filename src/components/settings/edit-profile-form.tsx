@@ -40,7 +40,7 @@ const EditProfileForm = () => {
   }
 
   return (
-    <Card className="border-none shadow-md bg-background/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+    <Card>
       <CardHeader className="pb-4 flex flex-row items-center gap-4">
         <div className="p-3 bg-primary/10 rounded-xl shrink-0">
           <User className="h-6 w-6 text-primary" />

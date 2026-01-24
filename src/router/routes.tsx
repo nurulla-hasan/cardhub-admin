@@ -13,6 +13,7 @@ const About = lazy(() => import("@/app/settings/about-us/About"));
 const Users = lazy(() => import("@/app/management/users/Users"));
 const AuctionManagement = lazy(() => import("@/app/management/auction/Auction"));
 const ListingManagement = lazy(() => import("@/app/management/listings/Listings"));
+const TransactionReports = lazy(() => import("@/app/management/reports/TransactionReports"));
 const Transactions = lazy(() => import("@/app/management/transactions/Transactions"));
 const CategoryBanner = lazy(() => import("@/app/management/category-banner/CategoryBanner"));
 const FinancialOrders = lazy(() => import("@/app/management/financial-orders/FinancialOrders"));
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
             { path: "listing-management", element: <ListingManagement /> },
             { path: "user-management", element: <Users /> },
             { path: "transactions", element: <Transactions /> },
+            { path: "transaction-reports", element: <TransactionReports /> },
             { path: "category-banner", element: <CategoryBanner /> },
             { path: "financial-orders", element: <FinancialOrders /> },
             { path: "notifications", element: <Notifications /> },
