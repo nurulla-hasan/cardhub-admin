@@ -172,31 +172,31 @@ const mockListings: Listing[] = [
     date: "Oct 16, 2024",
     status: "Sold",
   },
-  {
-    id: "10",
-    listingId: "#LST-8860",
-    seller: {
-      name: "Cynthia Garchomp",
-      email: "cynthia@cardhub.gg",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cynthia",
-    },
-    card: {
-      name: "Garchomp LV.X",
-      image: "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=300&q=80",
-      set: "Supreme Victors",
-      condition: "Lightly Played",
-    },
-    price: 280.00,
-    date: "Oct 15, 2024",
-    status: "Pending",
-  },
+  // {
+  //   id: "10",
+  //   listingId: "#LST-8860",
+  //   seller: {
+  //     name: "Cynthia Garchomp",
+  //     email: "cynthia@cardhub.gg",
+  //     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cynthia",
+  //   },
+  //   card: {
+  //     name: "Garchomp LV.X",
+  //     image: "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=300&q=80",
+  //     set: "Supreme Victors",
+  //     condition: "Lightly Played",
+  //   },
+  //   price: 280.00,
+  //   date: "Oct 15, 2024",
+  //   status: "Pending",
+  // },
 ];
 
 const meta = {
   total: mockListings.length,
   page: 1,
   limit: 10,
-  totalPages: 1,
+  totalPages: 12,
 };
 
 const ListingManagement = () => {

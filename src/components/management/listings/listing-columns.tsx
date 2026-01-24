@@ -1,10 +1,9 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Check, X, Eye } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { ListingViewModal } from "./listing-view-modal";
 
 export type Listing = {
   id: string;
@@ -124,37 +123,13 @@ export const listingColumns: ColumnDef<Listing>[] = [
   {
     id: "actions",
     header: () => <div className="text-end">Actions</div>,
-    cell: ({ row }) => (
-      <div className="flex items-center justify-end gap-2">
-        {row.original.status === "Pending" && (
-          <>
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-8 w-8 text-green-600 hover:text-green-700 hover:bg-green-50 border-green-200"
-              title="Approve"
-            >
-              <Check />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-8 w-8 text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
-              title="Reject"
-            >
-              <X />
-            </Button>
-          </>
-        )}
-        <Button
-          variant="outline"
-          size="icon"
-          className="h-8 w-8 text-muted-foreground"
-          title="View Details"
-        >
-          <Eye />
-        </Button>
-      </div>
-    ),
+    cell: ({ row }) => {
+      const listing = row.original;
+      return (
+        <div className="flex items-center justify-end gap-2">
+          <ListingViewModal listing={listing} />
+        </div>
+      );
+    },
   },
 ];
