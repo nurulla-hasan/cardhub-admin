@@ -49,16 +49,19 @@ const Sidebar = ({
   }, [location, isSidebarOpen, setIsSidebarOpen]);
 
   const navItems = useMemo(
-    () => [{ name: "Dashboard", icon: LayoutGrid, href: "/" }],
+    () => [
+      { name: "Dashboard", icon: LayoutGrid, href: "/" },
+      { name: "Analytics", icon: BarChart3, href: "/transaction-reports" }
+    ],
     [],
   );
 
   const managementItems = [
+    
     { name: "Users", icon: Users, href: "/user-management" },
     { name: "Listing", icon: Package, href: "/listing-management" },
     { name: "Transactions", icon: History, href: "/transactions" },
     { name: "Report Management", icon: ShieldAlert, href: "/report-management" },
-    { name: "Analytics", icon: BarChart3, href: "/transaction-reports" },
   ];
 
   const settingsSubItems = useMemo(
