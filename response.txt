@@ -1,0 +1,74 @@
+export type OrderData = {
+  id: string;
+  slNo: string;
+  userName: string;
+  userAvatar: string;
+  email: string;
+  contactNumber: string;
+  item: string;
+  totalFee: string;
+  months: number;
+  perMonthFee: string;
+  // Financial Order specific fields (Optional)
+  lastPayment?: string;
+  status?: "Paid" | "Due";
+};
+
+export const mockOrders: OrderData[] = [
+  {
+    id: "1",
+    slNo: "#12333",
+    userName: "Kathryn Murp",
+    userAvatar: "/avatars/kathryn.png",
+    email: "bockely@att.com",
+    contactNumber: "(201) 555-0124",
+    item: "iPhone 13 Pro Max",
+    totalFee: "$24.00",
+    months: 12,
+    perMonthFee: "$4.00",
+    lastPayment: "12/06/24",
+    status: "Due",
+  },
+  {
+    id: "2",
+    slNo: "#12333",
+    userName: "Devon Lane",
+    userAvatar: "/avatars/devon.png",
+    email: "csilvers@rizon.com",
+    contactNumber: "(219) 555-0114",
+    item: "Samsung Smart TV",
+    totalFee: "$20.00",
+    months: 6,
+    perMonthFee: "$2.00",
+    lastPayment: "10/06/24",
+    status: "Paid",
+  },
+  {
+    id: "3",
+    slNo: "#12333",
+    userName: "Hari Danang",
+    userAvatar: "/avatars/hari.png",
+    email: "qamaho@mail.com",
+    contactNumber: "(316) 555-0116",
+    item: "Men's T-shirt",
+    totalFee: "$45.00",
+    months: 12,
+    perMonthFee: "$4.00",
+    lastPayment: "10/06/24",
+    status: "Due",
+  },
+  {
+    id: "4",
+    slNo: "#12333",
+    userName: "Eleanor Pena",
+    userAvatar: "/avatars/eleanor.png",
+    email: "xterris@gmail.com",
+    contactNumber: "(704) 555-0127",
+    item: "Logitech A4 Mouse",
+    totalFee: "$18.00",
+    months: 12,
+    perMonthFee: "$8.00",
+    lastPayment: "04/06/24",
+    status: "Due",
+  },
+];
