@@ -1,5 +1,3 @@
-;
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,8 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
 import { Save, Percent } from "lucide-react";
+import { SuccessToast } from "@/lib/utils";
 
 export function FeeSettingsCard() {
   const [feePercentage, setFeePercentage] = useState<string>("2.5");
@@ -24,7 +22,7 @@ export function FeeSettingsCard() {
     // Simulate API call
     setTimeout(() => {
       setIsSaving(false);
-      toast.success("Transaction fee updated successfully");
+      SuccessToast("Transaction fee updated successfully");
     }, 1000);
   };
 
@@ -57,14 +55,10 @@ export function FeeSettingsCard() {
           </p>
         </div>
       </CardContent>
-      <CardFooter className="border-t px-6 py-4">
-        <Button onClick={handleSave} disabled={isSaving} className="ml-auto">
-          {isSaving ? "Saving..." : (
-            <>
-              <Save className="mr-2 h-4 w-4" />
-              Save Changes
-            </>
-          )}
+      <CardFooter className="border-t grow">
+        <Button onClick={handleSave} loading={isSaving} loadingText="Saving..." className="ml-auto">
+          <Save />
+          Save Changes
         </Button>
       </CardFooter>
     </Card>
