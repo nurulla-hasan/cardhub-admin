@@ -1,4 +1,4 @@
-"use client";
+;
 
 import { useState } from "react";
 import { Check, X, Eye } from "lucide-react";

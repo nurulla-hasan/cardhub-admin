@@ -1,4 +1,4 @@
-"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft } from "lucide-react"
 import { useNavigate } from "react-router-dom"

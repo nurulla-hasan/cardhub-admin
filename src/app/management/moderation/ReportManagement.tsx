@@ -1,4 +1,4 @@
-"use client";
+;
 
 import PageLayout from "@/components/common/page-layout";
 import PageHeader from "@/components/ui/custom/page-header";

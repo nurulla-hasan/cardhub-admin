@@ -6,8 +6,22 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ReportViewModal } from "./report-view-modal";
-import { ArrowUpDown } from "lucide-react";
-import { getInitials } from "@/lib/utils";
+import { formatDate, getInitials, cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  CheckCircle,
+  ChevronDown,
+  Trash2,
+  XCircle,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export type ReportStatus = "Pending" | "Resolved" | "Dismissed";
 export type ReportType =
@@ -45,6 +59,9 @@ export const reportColumns: ColumnDef<Report>[] = [
           className="flex items-center gap-2 cursor-pointer select-none group"
           title="Select all rows on this page"
         >
+          <span className="text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors whitespace-nowrap">
+            Select All
+          </span>
           <Checkbox
             checked={
               table.getIsAllPageRowsSelected() ||
@@ -55,9 +72,6 @@ export const reportColumns: ColumnDef<Report>[] = [
             }
             aria-label="Select all"
           />
-          <span className="text-sm font-semibold text-muted-foreground group-hover:text-primary transition-colors whitespace-nowrap">
-            Select All
-          </span>
         </label>
       </div>
     ),
@@ -153,26 +167,81 @@ export const reportColumns: ColumnDef<Report>[] = [
   },
   {
     accessorKey: "date",
-    header: ({ column }) => {
+    header: "Date",
+    cell: ({ row }) => {
+      const date = row.getValue("date");
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Date
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
+        <div className="text-sm text-muted-foreground">
+          {formatDate(date as string)}
+        </div>
       );
     },
   },
   {
     id: "actions",
-    header: () => <div className="text-end">Actions</div>,
+    header: ({ table }) => {
+      const selectedCount = table.getSelectedRowModel().rows.length;
+      return (
+        <div className="flex justify-end">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className={cn(
+                  "flex gap-1 items-center font-semibold transition-all",
+                  selectedCount > 0 
+                    ? "text-primary bg-primary/10 hover:bg-primary/20" 
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {selectedCount > 0 ? `Bulk Actions (${selectedCount})` : "Actions"}
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>
+                {selectedCount > 0 ? `Selected: ${selectedCount} Reports` : "Global Actions"}
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                disabled={selectedCount === 0}
+                onClick={() => {
+                  toast.success(`Resolved ${selectedCount} reports`);
+                  table.resetRowSelection();
+                }}
+              >
+                <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
+                Bulk Resolve
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                disabled={selectedCount === 0}
+                onClick={() => {
+                  toast.success(`Dismissed ${selectedCount} reports`);
+                  table.resetRowSelection();
+                }}
+              >
+                <XCircle className="mr-2 h-4 w-4 text-yellow-500" />
+                Bulk Dismiss
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive"
+                disabled={selectedCount === 0}
+                onClick={() => table.resetRowSelection()}
+              >
+                <Trash2 className="mr-2 h-4 w-4" />
+                Clear Selection
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      );
+    },
     cell: ({ row }) => {
       const report = row.original;
 
       return (
-        <div className="text-end">
+        <div className="flex items-center justify-end gap-2 pr-2">
           <ReportViewModal report={report} />
         </div>
       );

@@ -1,4 +1,4 @@
-"use client";
+;
 
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";

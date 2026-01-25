@@ -1,4 +1,4 @@
-"use client";
+;
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

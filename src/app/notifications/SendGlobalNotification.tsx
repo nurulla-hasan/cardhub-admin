@@ -1,4 +1,4 @@
-"use client";
+;
 
 import { useState } from "react";
 import { Megaphone, Send, Info, AlertTriangle, CheckCircle2 } from "lucide-react";

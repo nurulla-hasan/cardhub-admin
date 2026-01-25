@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
+;
 
 import { icons } from "lucide-react";
 

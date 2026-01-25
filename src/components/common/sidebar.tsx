@@ -68,8 +68,8 @@ const Sidebar = ({
     () => [
       { name: "Profile", icon: User, href: "/settings/profile" },
       { name: "About Us", icon: Info, href: "/settings/about" },
-      { name: "Terms and Conditions", icon: ReceiptText, href: "/settings/terms" },
       { name: "Privacy Policy", icon: GlobeLock, href: "/settings/privacy" },
+      { name: "Terms and Conditions", icon: ReceiptText, href: "/settings/terms" },
     ],
     [],
   );

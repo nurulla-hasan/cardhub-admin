@@ -97,9 +97,9 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "date",
-    header: "Date",
+    header: () => <div className="text-end w-full">Date</div>,
     cell: ({ row }) => (
-      <span className="text-sm text-muted-foreground">{row.original.date}</span>
+      <div className="text-sm text-end text-muted-foreground">{row.original.date}</div>
     ),
   },
 ];

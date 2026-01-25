@@ -1,4 +1,4 @@
-"use client";
+;
 
 import { useState } from "react";
 import { Eye, MapPin } from "lucide-react";
