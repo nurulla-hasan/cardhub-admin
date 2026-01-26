@@ -16,6 +16,8 @@ const ReportManagement = lazy(() => import("@/app/management/moderation/ReportMa
 const TransactionReports = lazy(() => import("@/app/management/reports/TransactionReports"));
 const Transactions = lazy(() => import("@/app/management/transactions/Transactions"));
 const FinancialOrders = lazy(() => import("@/app/management/financial-orders/FinancialOrders"));
+const CategoryManagement = lazy(() => import("@/app/management/categories/CategoryManagement"));
+const InventoryImport = lazy(() => import("@/app/management/inventory-import/InventoryImport"));
 const Notifications = lazy(() => import("@/app/notifications/Notifications"));
 const Login = lazy(() => import("@/app/auth/Login"));
 const ForgotPassword = lazy(() => import("@/app/auth/ForgotPassword"));
@@ -38,6 +40,8 @@ export const router = createBrowserRouter([
             { path: "transactions", element: <Transactions /> },
             { path: "transaction-reports", element: <TransactionReports /> },
             { path: "financial-orders", element: <FinancialOrders /> },
+            { path: "category-management", element: <CategoryManagement /> },
+            { path: "inventory-import", element: <InventoryImport /> },
             { path: "notifications", element: <Notifications /> },
 
             // Settings

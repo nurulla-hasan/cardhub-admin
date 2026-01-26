@@ -10,6 +10,7 @@ import {
   LogOut,
   ChevronDown,
   Package,
+  Scan,
   Users,
   History,
   BarChart3,
@@ -60,6 +61,8 @@ const Sidebar = ({
     
     { name: "Users", icon: Users, href: "/user-management" },
     { name: "Listing", icon: Package, href: "/listing-management" },
+    { name: "Categories", icon: ListOrdered, href: "/category-management" },
+    { name: "Scan Service", icon: Scan, href: "/inventory-import" },
     { name: "Transactions", icon: History, href: "/transactions" },
     { name: "Report Management", icon: ShieldAlert, href: "/report-management" },
   ];
